@@ -1,0 +1,9 @@
+Flask
+Flask-Babel
+Flask-Login
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-WTF
+phonenumbers
+psycopg2
+WTForms-Alchemy

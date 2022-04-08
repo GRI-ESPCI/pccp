@@ -1,0 +1,29 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/frontend/auth.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <div class="login-container">
+        <h2>Connexion</h2>
+        <form method="post" action="/login">
+            <fieldset class="input-field">
+                {{ form.email.label }}
+                {{ form.email }}
+            </fieldset>
+            <fieldset class="input-field">
+                {{ form.password.label }}
+                {{ form.password }}
+            </fieldset>
+            <div class="input-field">
+                {{ form.submit }}
+            </div>
+            {{ form.csrf_token }}
+        </form>
+    </div>
+</main>
+{% endblock %}

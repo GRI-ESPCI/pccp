@@ -1,0 +1,264 @@
+{% extends  "layouts/base.html" %}
+
+{% block title %}PC Coup d'Pouce{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/frontend/index.css') }}"/>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/frontend/index.js') }}"></script>
+{% endblock %}
+
+{% block content%}
+<main class="main">
+    <section class="carousel" id="carousel">
+        {% for projet in projets %}
+            {% if loop.index0 == 0%}
+            <div class="slide slide-active">
+            {% else %}
+            <div class="slide">
+            {% endif %}
+                <div class="slide-text-container">
+                    <div class="slide-text slide-project">Projet</div>
+                    <div class="slide-text slide-title">{{ projet.name}}</div>
+                    <div class="slide-text slide-subtitle">{{ projet.courte_description}}</div>
+                    <a class="slide-button" href="{{ url_for('frontend.projet', slug=projet.slug) }}">En savoir plus</a>
+                </div>
+                <div class="slide-img">
+                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '_cover.jpg') }}" alt="Photo {{ projet.name}}">
+                </div>
+            </div>
+        {% endfor %}
+        <div class="dots" id="dots-container">
+            {% for projet in projets %}
+                {% if loop.index0 == 0 %}
+                <span class="dot dot-active"></span>
+                {% else %}
+                <span class="dot"></span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    <div class="container">
+        <section class="bienvenue main-section" id="about">
+            <h2>Bienvenue à PC Coup d'Pouce</h2>
+            <h3>Notre association étudiante qui a pour but de mettre nos connaissances et nos compétences au service des autres.</h3>
+
+            <p class="justify">
+                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quod suscipit temporibus ipsa velit alias dignissimos sapiente provident perferendis quo culpa quae, numquam libero incidunt illo tempora, corporis explicabo ratione.</span>
+                <span>Quibusdam voluptate quo beatae, temporibus quos numquam fuga, corrupti reiciendis facilis dolorem molestiae, animi mollitia laborum! Ipsum architecto, quia necessitatibus! Perferendis sit sint consectetur ullam suscipit doloremque dignissimos ipsum, incidunt.</span>
+                <span>Ratione fugiat atque minus praesentium aliquid aperiam earum obcaecati neque in saepe tenetur, dolorem fugit, animi velit quae enim. Cupiditate ab consequuntur voluptatibus quibusdam ut provident mollitia est laudantium ea.</span>
+                <span>Fugiat provident cum ipsum corporis asperiores aliquam qui libero, laborum doloribus ad velit, necessitatibus hic corrupti, officia est cupiditate quo a, animi! Dicta modi quas, quis saepe dignissimos perferendis vel.</span>
+                <span>Vitae, velit ipsa atque, quas similique accusantium aliquam facilis tempore perferendis, fuga eos libero impedit minus iure. Nam labore aperiam quidem nulla, atque nisi facere temporibus, porro eligendi ipsum totam.</span>
+            </p>
+            <p class="justify"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse labore illum nam optio placeat ipsam cupiditate, dolorem, mollitia culpa non accusantium facere nobis laborum molestias? Ad nostrum vero vel blanditiis!</span><span>Provident ab, enim! Exercitationem rem animi, dignissimos molestiae consequuntur neque nulla minima officiis ab facilis quia maxime et sint maiores harum molestias id hic voluptatum vitae quibusdam aperiam. Consequatur, similique.</span></p>
+        </section>
+        <section class="keypoint-container main-section">
+            <div class="keypoint">
+                <div class="keypoint-icon"><i class="fa fa-handshake"></i></div>
+                <div class="keypoint-title">Solidarité</div>
+                <div class="keypoint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore perspiciatis, dicta iure magnam hic nobis vitae ex error non iste consequuntur itaque architecto! Nostrum atque aperiam modi veniam exercitationem!</div>
+            </div>
+            <div class="keypoint">
+                <div class="keypoint-icon"><i class="fa fa-heart"></i></div>
+                <div class="keypoint-title">Respect</div>
+                <div class="keypoint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore perspiciatis, dicta iure magnam hic nobis vitae ex error non iste consequuntur itaque architecto! Nostrum atque aperiam modi veniam exercitationem!</div>
+            </div>
+            <div class="keypoint">
+                <div class="keypoint-icon"><i class="fa fa-sync"></i></div>
+                <div class="keypoint-title">Durabilité</div>
+                <div class="keypoint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore perspiciatis, dicta iure magnam hic nobis vitae ex error non iste consequuntur itaque architecto! Nostrum atque aperiam modi veniam exercitationem!</div>
+            </div>
+            <div class="keypoint">
+                <div class="keypoint-icon"><i class="fa fa-check"></i></div>
+                <div class="keypoint-title">Autonomie</div>
+                <div class="keypoint-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dolore perspiciatis, dicta iure magnam hic nobis vitae ex error non iste consequuntur itaque architecto! Nostrum atque aperiam modi veniam exercitationem!</div>
+            </div>
+        </section>
+    </div>
+    <section class="don main-section">
+        <div class="container don-container" id="don">
+            <div class="don-text">
+                <h2>FAITES UN <span class="orange">DON</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero architecto ipsa dicta laudantium eveniet neque nihil veniam, temporibus hic dolore? Libero consectetur quo, laboriosam eveniet aut delectus? Nisi corporis, commodi!</p>
+            </div>
+            <div class="don-button">
+                <a href="#">Faire un don</a>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <section class="projets main-section" id="projets">
+            <h2>Nos projets</h2>
+            <div class="projets-subtitle">
+                Découvrez nos projets en cours ou terminés.
+            </div>
+            <div class="projets-tiles-container">
+                {% for projet in projets %}
+                <a class="projets-tile" href="{{ url_for('frontend.projet', slug=projet.slug) }}">
+                    <div class="projets-tile-img">
+                        <img src="{{ url_for('static', filename=projet.cover_image) }}" alt="Image projet.slug">
+                    </div>
+                    <div class="projets-tile-title">{{projet.name}}</div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="push-right">
+                <a href="/projets" class="orange projets-link">Découvrir tous nos projets <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </div>
+    <section class="chiffres main-section">
+        <div class="container">
+            <h2>PC Coup d'Pouce en quelques chiffres</h2>
+            <div class="chiffres-subtitle">Pour vous donner une petite idée de ce que nous faisons à PC Coup d'Pouce , découvrez notre association en chiffres.</div>
+            <div class="chiffres-data-container">
+                <div class="chiffres-data">
+                    <div class="chiffres-logo">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="chiffres-number">
+                        50
+                    </div>
+                    <div class="chiffres-text">
+                        Trop bien les patates !
+                    </div>
+                </div>
+                <div class="chiffres-data">
+                    <div class="chiffres-logo">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="chiffres-number">
+                        50
+                    </div>
+                    <div class="chiffres-text">
+                        Trop bien les patates !
+                    </div>
+                </div>
+                <div class="chiffres-data">
+                    <div class="chiffres-logo">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="chiffres-number">
+                        50
+                    </div>
+                    <div class="chiffres-text">
+                        Trop bien les patates !
+                    </div>
+                </div>
+                <div class="chiffres-data">
+                    <div class="chiffres-logo">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <div class="chiffres-number">
+                        50
+                    </div>
+                    <div class="chiffres-text">
+                        Trop bien les patates !
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <section class="news main-section" id="news">
+            <h2>Les dernières news</h2>
+            <div class="news-subtitle">Retrouvez les dernières news sur les projet pccp</div>
+            <div class="news-container">
+                <div class="news-current">
+                    <div class="news-current-item">
+                        <div class="news-current-img"><img src="{{ url_for('static', filename='img/news.jpg') }}" alt="News"></div>
+                        <div class="news-current-container">
+                            <div class="news-current-title">Medic'nem</div>
+                            <div class="news-current-subtitle">Rendons le nem aux vietnamiens</div>
+                            <div class="news-current-date">3 septembre 2003, Paris</div>
+                            <div class="news-current-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas tempora officiis beatae recusandae possimus error nisi, illum, totam fugiat, quia, repellendus perferendis! Iste dolore aspernatur voluptates, consequuntur odit repellendus culpa!</div>
+                            <div class="news-current-button">
+                                <a href="#">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-current-item">
+                        <div class="news-current-img"><img src="{{ url_for('static', filename='img/news.jpg') }}" alt="News"></div>
+                        <div class="news-current-container">
+                            <div class="news-current-title">Medic'nem</div>
+                            <div class="news-current-subtitle">Rendons le nem aux vietnamiens</div>
+                            <div class="news-current-date">3 septembre 2003, Paris</div>
+                            <div class="news-current-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas tempora officiis beatae recusandae possimus error nisi, illum, totam fugiat, quia, repellendus perferendis! Iste dolore aspernatur voluptates, consequuntur odit repellendus culpa!</div>
+                            <div class="news-current-button">
+                                <a href="#">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-old">
+                    <div class="news-old-item">
+                        <div class="news-old-img">
+                            <img src="{{ url_for('static', filename='img/side news image.jpg') }}" alt="">
+                        </div>
+                        <div class="news-old-content">
+                            <div class="news-old-title">Medic'Nam trouve son assistant</div>
+                            <div class="news-old-text">Un vietnamien est salarié pour effectuer les démarches sur place.</div>
+                        </div>
+                    </div>
+                    <div class="news-old-item">
+                        <div class="news-old-img">
+                            <img src="{{ url_for('static', filename='img/side news image.jpg') }}" alt="">
+                        </div>
+                        <div class="news-old-content">
+                            <div class="news-old-title">Medic'Nam trouve son assistant</div>
+                            <div class="news-old-text">Un vietnamien est salarié pour effectuer les démarches sur place.</div>
+                        </div>
+                    </div>
+                    <div class="news-old-item">
+                        <div class="news-old-img">
+                            <img src="{{ url_for('static', filename='img/side news image.jpg') }}" alt="">
+                        </div>
+                        <div class="news-old-content">
+                            <div class="news-old-title">Medic'Nam trouve son assistant</div>
+                            <div class="news-old-text">Un vietnamien est salarié pour effectuer les démarches sur place.</div>
+                        </div>
+                    </div>
+                    <div class="news-old-item">
+                        <div class="news-old-img">
+                            <img src="{{ url_for('static', filename='img/side news image.jpg') }}" alt="">
+                        </div>
+                        <div class="news-old-content">
+                            <div class="news-old-title">Medic'Nam trouve son assistant</div>
+                            <div class="news-old-text">Un vietnamien est salarié pour effectuer les démarches sur place.</div>
+                        </div>
+                    </div>
+                    <div class="more-old-news">
+                        <a href="#">Plus ancien</a>
+                    </div>
+                </div>
+            </div>
+            <div class="more-old-news-mobile">
+                <a href="#">Plus ancien</a>
+            </div>
+        </section>
+    </div>
+    <section class="partenaires main-section" id="partenaires">
+        <div class="container">
+            <h2>Nos partenaires</h2>
+            <div class="partenaires-subtitle">Sans eux, les équipes de PC Coup d'Pouce  ne pourraient pas mener à bien leurs projets !</div>
+            <div class="partenaires-subsub-container">
+                <span class="partenaires-subsub">Les partenaires de PCCP</span>
+            </div>
+            <div class="partenaires-container">
+                <div class="partenaires-item">
+                    <div class="partenaires-img">
+                        <img src="{{ url_for('static', filename='img/espci.png') }}" alt="">
+                    </div>
+                    <div class="partenaires-name">ESPCI</div>
+                </div>
+                <div class="partenaires-item">
+                    <div class="partenaires-img">
+                        <img src="{{ url_for('static', filename='img/espci.pngs') }}" alt="">
+                    </div>
+                    <div class="partenaires-name">ESPCI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
