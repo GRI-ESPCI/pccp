@@ -571,12 +571,3 @@
     padding: 10px;
     font-size: 1.6em;
 }
-footer {
-    background-color: #222222;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 1.3em;
-    font-family: "RobotoSlab";
-    flex-shrink: 0;
-}

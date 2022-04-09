@@ -154,3 +154,12 @@ h2 {
 .main-section {
     margin: 40px 0;
 }
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.3em;
+    font-family: "RobotoSlab";
+    flex-shrink: 0;
+}
