@@ -24,7 +24,7 @@
                     <a class="slide-button" href="{{ url_for('frontend.projet', slug=projet.slug) }}">En savoir plus</a>
                 </div>
                 <div class="slide-img">
-                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '_cover.jpg') }}" alt="Photo {{ projet.name}}">
+                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_cover.jpg') }}" alt="Photo {{ projet.name}}">
                 </div>
             </div>
         {% endfor %}
@@ -96,7 +96,7 @@
                 {% for projet in projets %}
                 <a class="projets-tile" href="{{ url_for('frontend.projet', slug=projet.slug) }}">
                     <div class="projets-tile-img">
-                        <img src="{{ url_for('static', filename=projet.cover_image) }}" alt="Image projet.slug">
+                        <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_thumbnail.jpg') }}" alt="Image projet.slug">
                     </div>
                     <div class="projets-tile-title">{{projet.name}}</div>
                 </a>
@@ -253,7 +253,7 @@
                 </div>
                 <div class="partenaires-item">
                     <div class="partenaires-img">
-                        <img src="{{ url_for('static', filename='img/espci.pngs') }}" alt="">
+                        <img src="{{ url_for('static', filename='img/espci.png') }}" alt="">
                     </div>
                     <div class="partenaires-name">ESPCI</div>
                 </div>

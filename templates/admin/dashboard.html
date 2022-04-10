@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Tableau de bord{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <section class="container">
+        <h1>Tableau de bord</h1>
+        <div class="dashboard-projets">
+            <div class="dashboard-projets-title">
+                <h2>Projets actifs</h2>
+            </div>
+            {% for projet in projets_actifs %}
+                <div class="dashboard-projet-actif">
+                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_thumbnail.jpg') }}" alt="{{ projet.name }} thumbnail">
+                    <div class="dashboard-projet-content">
+                        <h3><a href="{{ url_for('admin.projet', slug=projet.slug) }}">{{ projet.name }} - {{ projet.promo }}</a></h3>
+                        <p>{{ projet.courte_description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}

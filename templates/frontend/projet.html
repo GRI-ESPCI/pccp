@@ -14,7 +14,7 @@
             <div class="projet-header-text projet-header-text">{{projet.courte_description}}</div>
         </div>
         <div class="projet-header-img">
-            <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '_cover.jpg') }}" alt="Photo {{projet.name}}">
+            <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_cover.jpg') }}" alt="Photo {{projet.name}}">
         </div>
     </section>
     <div class="container">

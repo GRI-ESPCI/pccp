@@ -1,0 +1,66 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Tableau de bord{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <section class="container">
+        <a href="{{ url_for('admin.dashboard') }}">Retour au tableau de bord</a>
+        <h1>{{ projet.name }}</h1>
+        <form action="{{ url_for('admin.projet', slug=projet.slug) }}" method="post" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <fieldset class="projet-field projet-img">
+                <div class="projet-cover">
+                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_cover.jpg') }}" alt="{{ projet.name }} cover">
+                    {{ form.cover_img.label }}
+                    {{ form.cover_img }}
+                </div>
+                <div class="projet-thumbnail">
+                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_thumbnail.jpg') }}" alt="{{ projet.name }} thumbnail">
+                    {{ form.thumbnail.label }}
+                    {{ form.thumbnail }}
+                </div>
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.name.label}}
+                {{ form.name }}
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.slug.label}}
+                {{ form.slug }}
+                <p>Attention ! Nom raccourci du projet pour les liens. Changer ce paramètre peut entraîner une perte de référencement. Mettre seulement des caractères simples (pas d'accents etc)</p>
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.promo.label}}
+                {{ form.promo }}
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.courte_description.label}}
+                {{ form.courte_description }}
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.quoi.label}}
+                {{ form.quoi(rows=10) }}
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.ou.label}}
+                {{ form.ou(rows=10) }}
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.pour_qui.label}}
+                {{ form.pour_qui(rows=10) }}
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.pourquoi.label}}
+                {{ form.pourquoi(rows=10) }}
+            </fieldset>
+            <div class="projet-field">
+                {{ form.submit }}
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}
