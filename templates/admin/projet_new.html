@@ -1,6 +1,6 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %}Tableau de bord{% endblock %}
+{% block title %}Nouveau projet{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard.css') }}"/>
 {% endblock %}
@@ -9,17 +9,23 @@
 <main class="main">
     <section class="container">
         <a href="{{ url_for('admin.dashboard') }}">Retour au tableau de bord</a>
-        <h1>{{ projet.name }}</h1>
-        <form action="{{ url_for('admin.projet', slug=projet.slug) }}" method="post" enctype="multipart/form-data">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('admin.projet_new') }}" method="post" enctype="multipart/form-data">
             {{ form.csrf_token }}
             <fieldset class="projet-field projet-img">
                 <div class="projet-cover">
-                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_cover.jpg') }}" alt="{{ projet.name }} cover">
                     {{ form.cover_img.label }}
                     {{ form.cover_img }}
                 </div>
                 <div class="projet-thumbnail">
-                    <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_thumbnail.jpg') }}" alt="{{ projet.name }} thumbnail">
                     {{ form.thumbnail.label }}
                     {{ form.thumbnail }}
                 </div>

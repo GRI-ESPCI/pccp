@@ -17,7 +17,7 @@
                 <div class="dashboard-projet-actif">
                     <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_thumbnail.jpg') }}" alt="{{ projet.name }} thumbnail">
                     <div class="dashboard-projet-content">
-                        <h3><a href="{{ url_for('admin.projet', slug=projet.slug) }}">{{ projet.name }} - {{ projet.promo }}</a></h3>
+                        <h3><a href="{{ url_for('admin.projet_edit', slug=projet.slug) }}">{{ projet.name }} - {{ projet.promo }}</a></h3>
                         <p>{{ projet.courte_description }}</p>
                     </div>
                 </div>
