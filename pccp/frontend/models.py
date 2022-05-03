@@ -24,19 +24,21 @@ class Projet(db.Model):
         db.String(255),
         info={"label": "Courte description"}
     )
-    quoi = db.Column(
-        db.Text,
-        info={"label": "Quoi ?"}
+    sections =db.relationship("ProjetSection", backref="projet", lazy=True)
+
+class ProjetSection(db.Model):
+
+    id = db.Column(
+        db.Integer,
+        primary_key=True
     )
-    ou = db.Column(
-        db.Text,
-        info={"label": "Où ?"}
+    title = db.Column(
+        db.String(255),
+        nullable=False,
+        info={"label": "Titre de la section"}
     )
-    pour_qui = db.Column(
-        db.Text,
-        info={"label": "Pour qui ?"}
+    content = db.Column(
+        db.Text(),
+        info={"label": "Contenu de la section"}
     )
-    pourquoi = db.Column(
-        db.Text,
-        info={"label": "Pourquoi ?"}
-    )
+    projet_id = db.Column(db.Integer, db.ForeignKey('projet.id'), nullable=False)
