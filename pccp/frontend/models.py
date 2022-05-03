@@ -26,6 +26,22 @@ class Projet(db.Model):
     )
     sections = db.relationship("ProjetSection", backref="projet", lazy=True, cascade="all, delete, delete-orphan")
 
+    is_archive = db.Column(
+        db.Boolean,
+        nullable=False,
+        default=False,
+        server_default="false",
+        info={"label": "Projet archivé ?"}
+    )
+
+    is_visible = db.Column(
+        db.Boolean,
+        nullable=False,
+        default=False,
+        server_default="false",
+        info={"label": "Projet visible ?"}
+    )
+
 class ProjetSection(db.Model):
 
     id = db.Column(
