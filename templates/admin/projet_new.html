@@ -4,6 +4,9 @@
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard.css') }}"/>
 {% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/admin/projet.js') }}" ></script>
+{% endblock %}
 
 {% block content %}
 <main class="main">
