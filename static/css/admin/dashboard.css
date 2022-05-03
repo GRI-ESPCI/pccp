@@ -74,3 +74,11 @@
         margin-bottom: auto;
     }
 }
+.sections-header {
+    display: flex;
+    justify-content: space-between;
+}
+.sections-header button {
+    margin-top: auto;
+    height: 70%;
+}

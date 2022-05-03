@@ -4,6 +4,9 @@
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard.css') }}"/>
 {% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/admin/projet.js') }}" ></script>
+{% endblock %}
 
 {% block content %}
 <main class="main">
@@ -50,22 +53,21 @@
                 {{ form.courte_description.label}}
                 {{ form.courte_description }}
             </fieldset>
-            <fieldset class="projet-field">
-                {{ form.quoi.label}}
-                {{ form.quoi(rows=10) }}
-            </fieldset>
-            <fieldset class="projet-field">
-                {{ form.ou.label}}
-                {{ form.ou(rows=10) }}
-            </fieldset>
-            <fieldset class="projet-field">
-                {{ form.pour_qui.label}}
-                {{ form.pour_qui(rows=10) }}
-            </fieldset>
-            <fieldset class="projet-field">
-                {{ form.pourquoi.label}}
-                {{ form.pourquoi(rows=10) }}
-            </fieldset>
+            <div class="sections-header">
+                <h2>Sections</h2>
+                <button id="section-add">Ajouter</button>
+            </div>
+            <div id="sections-form">
+                {% for section in projet.sections %}
+                    <fieldset class="projet-field projet-field-section">
+                        <label for="title-{{ loop.index0 }}">Titre</label>
+                        <input type="text" name="title-{{ loop.index0 }}" value="{{ section.title }}" />
+                        <label for="content-{{ loop.index0 }}">Contenu</label>
+                        <textarea rows="10" name="content-{{ loop.index0 }}">{{ section.content }}</textarea>
+                        <button id="delete-{{ loop.index0 }}" class="delete">Supprimer</button>
+                    </fieldset>
+                {% endfor %}
+            </div>
             <div class="projet-field">
                 {{ form.submit }}
             </div>

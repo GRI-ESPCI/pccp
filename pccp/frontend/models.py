@@ -24,7 +24,7 @@ class Projet(db.Model):
         db.String(255),
         info={"label": "Courte description"}
     )
-    sections =db.relationship("ProjetSection", backref="projet", lazy=True)
+    sections = db.relationship("ProjetSection", backref="projet", lazy=True, cascade="all, delete, delete-orphan")
 
 class ProjetSection(db.Model):
 
