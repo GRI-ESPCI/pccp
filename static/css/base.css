@@ -86,8 +86,8 @@ h2 {
 .nav a {
     display: block;
     line-height: 60px;
-    color: #000;
     font-family: "Roboto";
+    color: black;
 }
 .nav-item:hover {
     background-color: #eee;
@@ -150,6 +150,15 @@ h2 {
     .nav li.icon {
         display: none;
     }
+}
+a.nav-button {
+    background-color: #fa5002;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+a.nav-button:hover {
+    color: #ccc;
 }
 .main-section {
     margin: 40px 0;
