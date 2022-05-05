@@ -1,3 +1,4 @@
+bbcode
 Flask
 Flask-Babel
 Flask-Login
