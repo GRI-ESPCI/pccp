@@ -24,7 +24,12 @@ class Projet(db.Model):
         db.String(255),
         info={"label": "Courte description"}
     )
-    sections = db.relationship("ProjetSection", backref="projet", lazy=True, cascade="all, delete, delete-orphan")
+    content = db.Column(
+        db.Text,
+        info={"label": "Contenu de la page"},
+        default="",
+        server_default=""
+    )
 
     is_archive = db.Column(
         db.Boolean,
@@ -41,20 +46,3 @@ class Projet(db.Model):
         server_default="false",
         info={"label": "Projet visible ?"}
     )
-
-class ProjetSection(db.Model):
-
-    id = db.Column(
-        db.Integer,
-        primary_key=True
-    )
-    title = db.Column(
-        db.String(255),
-        nullable=False,
-        info={"label": "Titre de la section"}
-    )
-    content = db.Column(
-        db.Text(),
-        info={"label": "Contenu de la section"}
-    )
-    projet_id = db.Column(db.Integer, db.ForeignKey('projet.id'), nullable=False)

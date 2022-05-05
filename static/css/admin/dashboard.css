@@ -48,6 +48,9 @@
     margin-right: 5%;
     margin-left: auto;
 }
+.projet-field textarea{
+    resize: none;
+}
 .projet-img{
     display: flex;
     flex-direction: column;
@@ -73,12 +76,4 @@
     .projet-cover img, .projet-thumbnail img {
         margin-bottom: auto;
     }
-}
-.sections-header {
-    display: flex;
-    justify-content: space-between;
-}
-.sections-header button {
-    margin-top: auto;
-    height: 70%;
 }
