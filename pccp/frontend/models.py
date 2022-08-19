@@ -46,3 +46,25 @@ class Projet(db.Model):
         server_default="false",
         info={"label": "Projet visible ?"}
     )
+
+
+class IndexContent(db.Model):
+    
+    id = db.Column(
+        db.Integer(),
+        primary_key=True
+    )
+
+    bienvenue = db.Column(
+        db.Text,
+        info={"label": "Texte de bienvenue"},
+        default="",
+        server_default=""
+    )
+
+    don = db.Column(
+        db.Text,
+        info={"label": "Texte à côté du bouton de don"},
+        default="",
+        server_default=""
+    )

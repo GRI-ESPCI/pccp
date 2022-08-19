@@ -4,7 +4,7 @@ from sqlalchemy import and_
 
 
 from pccp.extensions import db
-from pccp.frontend.models import Projet
+from pccp.frontend.models import Projet, IndexContent
 from pccp.utils.bbcode import parse_bbcode
 
 frontend = Blueprint('frontend', __name__)
@@ -16,7 +16,10 @@ def home():
                 Projet.is_visible == True,
                 Projet.is_archive == False
             )).order_by(db.desc(Projet.promo)).limit(4).all()
-    return render_template('index.html', projets=projets)
+    ic = IndexContent.query.get(1)
+    if ic is None:
+        ic = IndexContent()
+    return render_template('index.html', projets=projets, content=ic)
 
 @frontend.route('/projet/<string:slug>')
 def projet(slug):

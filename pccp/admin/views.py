@@ -7,8 +7,8 @@ from flask_login import login_required
 
 
 from pccp.extensions import db
-from pccp.frontend.models import Projet
-from pccp.admin.forms import ProjetForm
+from pccp.frontend.models import IndexContent, Projet
+from pccp.admin.forms import ProjetForm, IndexContentForm
 
 admin = Blueprint('admin', __name__)
 
@@ -76,3 +76,21 @@ def submit_project_form(p, form, request):
         if not os.path.exists(img_folder):
             os.mkdir(img_folder)
         open(file_path, "wb").write(img_data)
+
+@admin.route("/admin/index/edit", methods=['GET', 'POST'])
+def index_edit():
+    ic = IndexContent.query.get(1)
+    if ic is None:
+        ic = IndexContent()
+        ic.id = 1
+    
+    form = IndexContentForm(obj=ic)  
+    if form.validate_on_submit():
+        form.populate_obj(ic)
+        db.session.add(ic)
+        db.session.commit()
+
+    return render_template(
+        'admin/index_edit.html',
+        form=form
+    )

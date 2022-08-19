@@ -68,7 +68,10 @@ def configure_blueprints(app):
 
 
 def configure_template_filters(app):
-    pass
+    
+    from pccp.utils.bbcode import parse_bbcode
+
+    app.add_template_filter(parse_bbcode, "bbcode")
 
 
 def configure_logging(app):

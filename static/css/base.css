@@ -172,3 +172,24 @@ footer {
     font-family: "RobotoSlab";
     flex-shrink: 0;
 }
+/*
+ * BBCODE
+ */
+ .bbcode h1 {
+    font-family: "RobotoSlab";
+    font-size: 3em;
+}
+.bbcode h2 {
+    font-family: "RobotoSlab";
+    font-size: 2.5em;
+}
+.bbcode h3 {
+    font-family: "RobotoSlab";
+    font-size: 1.5em;
+}
+.bbcode .center {
+    text-align: center;
+}
+.bbcode .justify {
+    text-align: justify;
+}

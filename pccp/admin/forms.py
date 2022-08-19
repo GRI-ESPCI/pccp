@@ -7,7 +7,8 @@ from wtforms.validators import (
     Optional
 )
 
-from pccp.frontend.models import Projet
+from pccp.extensions import db
+from pccp.frontend.models import Projet, IndexContent
 
 BaseModelForm = model_form_factory(FlaskForm)
 
@@ -22,6 +23,19 @@ class ModelForm(BaseModelForm):
 class ProjetForm(ModelForm):
     cover_img = FileField("Image de couverture")
     thumbnail = FileField("Vignette")
+    submit = SubmitField(
+        "Valider"
+    )
+
+class IndexContentModelForm(BaseModelForm):
+    class Meta:
+        model = IndexContent
+
+    @classmethod
+    def get_session(self):
+        return db.session
+
+class IndexContentForm(IndexContentModelForm):
     submit = SubmitField(
         "Valider"
     )

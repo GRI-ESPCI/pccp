@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}Édition de la page d'accueil{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard.css') }}"/>
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <section class="container">
+        <a href="{{ url_for('admin.dashboard') }}">Retour au tableau de bord</a>
+        <h1>Édition de la page d'accueil</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('admin.index_edit') }}" method="post" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <fieldset class="projet-field">
+                {{ form.bienvenue.label }}
+                {{ form.bienvenue(rows=15) }}
+            </fieldset>
+            <fieldset class="projet-field">
+                {{ form.don.label }}
+                {{ form.don(rows=4) }}
+            </fieldset>
+            <div class="projet-field">
+                {{ form.submit }}
+            </div>
+        </form>
+    </section>
+</main>
+{% endblock %}

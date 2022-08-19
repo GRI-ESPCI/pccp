@@ -1,5 +1,7 @@
 import bbcode
 
+from pccp import app
+
 
 def _render_img(name, value, options, parent, context):
     if "alt" in options:
@@ -18,17 +20,21 @@ def _render_map(name, value, options, parent, context):
 
 def _text_formatting(name, value, options, parent, context):
     classes = ""
+    style = ""
     if "center" in options:
         classes += "center "
     if "justify" in options:
         classes += "justify "
-    return f"<{name} class=\"{classes}\">{value}</{name}>"
+    if "size" in options:
+        style += f"font-size={options['size']};"
+    return f"<{name} class=\"{classes}\" style=\"{style}\">{value}</{name}>"
 
 def parse_bbcode(data):
     parser = bbcode.Parser()
     parser.add_formatter('h1', _text_formatting)
     parser.add_formatter('h2', _text_formatting)
     parser.add_formatter('h3', _text_formatting)
+    parser.add_formatter('p', _text_formatting)
     parser.add_formatter('b', _text_formatting)
     parser.add_formatter('i', _text_formatting)
     parser.add_formatter('u', _text_formatting)

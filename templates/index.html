@@ -39,18 +39,8 @@
         </div>
     </section>
     <div class="container">
-        <section class="bienvenue main-section" id="about">
-            <h2>Bienvenue à PC Coup d'Pouce</h2>
-            <h3>Notre association étudiante qui a pour but de mettre nos connaissances et nos compétences au service des autres.</h3>
-
-            <p class="justify">
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quod suscipit temporibus ipsa velit alias dignissimos sapiente provident perferendis quo culpa quae, numquam libero incidunt illo tempora, corporis explicabo ratione.</span>
-                <span>Quibusdam voluptate quo beatae, temporibus quos numquam fuga, corrupti reiciendis facilis dolorem molestiae, animi mollitia laborum! Ipsum architecto, quia necessitatibus! Perferendis sit sint consectetur ullam suscipit doloremque dignissimos ipsum, incidunt.</span>
-                <span>Ratione fugiat atque minus praesentium aliquid aperiam earum obcaecati neque in saepe tenetur, dolorem fugit, animi velit quae enim. Cupiditate ab consequuntur voluptatibus quibusdam ut provident mollitia est laudantium ea.</span>
-                <span>Fugiat provident cum ipsum corporis asperiores aliquam qui libero, laborum doloribus ad velit, necessitatibus hic corrupti, officia est cupiditate quo a, animi! Dicta modi quas, quis saepe dignissimos perferendis vel.</span>
-                <span>Vitae, velit ipsa atque, quas similique accusantium aliquam facilis tempore perferendis, fuga eos libero impedit minus iure. Nam labore aperiam quidem nulla, atque nisi facere temporibus, porro eligendi ipsum totam.</span>
-            </p>
-            <p class="justify"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse labore illum nam optio placeat ipsam cupiditate, dolorem, mollitia culpa non accusantium facere nobis laborum molestias? Ad nostrum vero vel blanditiis!</span><span>Provident ab, enim! Exercitationem rem animi, dignissimos molestiae consequuntur neque nulla minima officiis ab facilis quia maxime et sint maiores harum molestias id hic voluptatum vitae quibusdam aperiam. Consequatur, similique.</span></p>
+        <section class="bienvenue main-section bbcode" id="about">
+            {{ content.bienvenue | bbcode | safe}}
         </section>
         <section class="keypoint-container main-section">
             <div class="keypoint">
@@ -79,7 +69,7 @@
         <div class="container don-container" id="don">
             <div class="don-text">
                 <h2>FAITES UN <span class="orange">DON</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero architecto ipsa dicta laudantium eveniet neque nihil veniam, temporibus hic dolore? Libero consectetur quo, laboriosam eveniet aut delectus? Nisi corporis, commodi!</p>
+                {{ content.don | bbcode | safe}}
             </div>
             <div class="don-button">
                 <a href="#">Faire un don</a>

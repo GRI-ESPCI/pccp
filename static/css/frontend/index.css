@@ -115,22 +115,6 @@
 .bienvenue {
     width: 100%;
 }
-.bienvenue h2, .bienvenue h3 {
-    font-family: "RobotoSlab";
-    margin: 10px auto;
-    text-align: center;
-}
-.bienvenue h2 {
-    font-size: 2.5em;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-.bienvenue h3 {
-    margin-bottom: 40px;
-}
-.justify {
-    text-align: justify;
-}
 .keypoint-container {
     width: 100%;
     display: flex;
