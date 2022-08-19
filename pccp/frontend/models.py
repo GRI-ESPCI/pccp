@@ -68,3 +68,135 @@ class IndexContent(db.Model):
         default="",
         server_default=""
     )
+
+    # Keypoint
+
+    keypoint1_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du point clé 1"},
+        default=""
+    )
+    keypoint1_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du point clé 1"},
+        default=""
+    )
+    keypoint1_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du point clé 1"},
+        default=""
+    )
+
+    keypoint2_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du point clé 2"},
+        default=""
+    )
+    keypoint2_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du point clé 2"},
+        default=""
+    )
+    keypoint2_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du point clé 2"},
+        default=""
+    )
+
+    keypoint3_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du point clé 3"},
+        default=""
+    )
+    keypoint3_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du point clé 3"},
+        default=""
+    )
+    keypoint3_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du point clé 3"},
+        default=""
+    )
+
+    keypoint4_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du point clé 4"},
+        default=""
+    )
+    keypoint4_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du point clé 4"},
+        default=""
+    )
+    keypoint4_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du point clé 4"},
+        default=""
+    )
+
+    # Chiffres
+
+    chiffres1_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du chiffre 1"},
+        default=""
+    )
+    chiffres1_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du chiffre 1"},
+        default=""
+    )
+    chiffres1_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du chiffre 1"},
+        default=""
+    )
+
+    chiffres2_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du chiffre 2"},
+        default=""
+    )
+    chiffres2_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du chiffre 2"},
+        default=""
+    )
+    chiffres2_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du chiffre 2"},
+        default=""
+    )
+
+    chiffres3_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du chiffre 3"},
+        default=""
+    )
+    chiffres3_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du chiffre 3"},
+        default=""
+    )
+    chiffres3_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du chiffre 3"},
+        default=""
+    )
+
+    chiffres4_icon = db.Column(
+        db.String(255),
+        info={"label": "Icône du chiffre 4"},
+        default=""
+    )
+    chiffres4_title = db.Column(
+        db.String(255),
+        info={"label": "Titre du chiffre 4"},
+        default=""
+    )
+    chiffres4_content = db.Column(
+        db.String(255),
+        info={"label": "Texte du chiffre 4"},
+        default=""
+    )

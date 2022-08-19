@@ -78,6 +78,7 @@ def submit_project_form(p, form, request):
         open(file_path, "wb").write(img_data)
 
 @admin.route("/admin/index/edit", methods=['GET', 'POST'])
+@login_required
 def index_edit():
     ic = IndexContent.query.get(1)
     if ic is None:
