@@ -115,3 +115,9 @@
         width: 75%;
     }
 }
+@media (max-width: 600px) {
+    .projet-content .projet-yt {
+        max-width: 100%;
+    }
+    
+}
