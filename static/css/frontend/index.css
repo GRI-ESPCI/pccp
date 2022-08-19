@@ -276,7 +276,7 @@
 }
 .chiffres {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
-        center / cover no-repeat url("../img/medicnam.jpg");
+        center / cover no-repeat url("/static/img/index_chiffres.jpg");
     padding: 30px 30px 80px 30px;
 }
 .chiffres h2 {
@@ -534,9 +534,6 @@
     display: flex;
     margin: 0 auto;
     justify-content: space-around;
-}
-.partenaires-item {
-
 }
 .partenaires-img {
     overflow: hidden;

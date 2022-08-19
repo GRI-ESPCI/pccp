@@ -129,3 +129,5 @@ latex
 *.log*
 logs/
 pep8.py.fixflak8
+
+static/img/index_*

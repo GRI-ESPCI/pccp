@@ -36,6 +36,7 @@ class IndexContentModelForm(BaseModelForm):
         return db.session
 
 class IndexContentForm(IndexContentModelForm):
+    chiffres_img = FileField("Image de fond pour les chiffres")
     submit = SubmitField(
         "Valider"
     )

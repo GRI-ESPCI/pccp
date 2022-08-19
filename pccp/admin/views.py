@@ -91,6 +91,13 @@ def index_edit():
         db.session.add(ic)
         db.session.commit()
 
+        if form.chiffres_img.data:
+            img_data = request.files[form.chiffres_img.name].read()
+            file_path = "static/img/index_chiffres.jpg"
+            if not os.path.exists("static/img/"):
+                os.mkdir("static/img/")
+            open(file_path, "wb").write(img_data)
+
     return render_template(
         'admin/index_edit.html',
         form=form

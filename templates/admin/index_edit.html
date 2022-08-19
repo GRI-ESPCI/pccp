@@ -94,6 +94,14 @@
             <hr/>
             <hr/>
 
+            <fieldset class="projet-field projet-img">
+                <div class="projet-img-single">
+                    <img src="{{ url_for('static', filename='img/index_chiffres.jpg') }}"/>
+                    {{ form.chiffres_img.label }}
+                    {{ form.chiffres_img }}
+                </div>
+            </fieldset>
+
             <fieldset class="projet-field">
                 {{ form.chiffres1_icon.label }}
                 {{ form.chiffres1_icon }}
