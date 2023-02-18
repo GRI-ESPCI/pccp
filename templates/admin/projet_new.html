@@ -48,6 +48,10 @@
                 {{ form.courte_description }}
             </fieldset>
             <fieldset class="projet-field">
+                {{ form.location.label}}
+                {{ form.location }}
+            </fieldset>
+            <fieldset class="projet-field">
                 {{ form.content.label }}
                 {{ form.content(rows=30) }}
             </fieldset>

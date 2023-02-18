@@ -15,7 +15,7 @@ def home():
     projets = Projet.query.filter(and_(
                 Projet.is_visible == True,
                 Projet.is_archive == False
-            )).order_by(db.desc(Projet.promo)).limit(4).all()
+            )).order_by(db.desc(Projet.promo)).all()
     ic = IndexContent.query.get(1)
     if ic is None:
         ic = IndexContent()

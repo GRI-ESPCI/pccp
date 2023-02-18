@@ -24,6 +24,12 @@ class Projet(db.Model):
         db.String(255),
         info={"label": "Courte description"}
     )
+
+    location = db.Column(
+        db.String(255),
+        info={"label": "Emplacement"}
+    )
+
     content = db.Column(
         db.Text,
         info={"label": "Contenu de la page"},
@@ -47,6 +53,25 @@ class Projet(db.Model):
         info={"label": "Projet visible ?"}
     )
 
+class Partenaire(db.Model):
+    id = db.Column(
+        db.Integer,
+        primary_key=True
+    )
+
+    is_active = db.Column(
+        db.Boolean,
+        nullable=False,
+        default=False,
+        server_default="false",
+        info={"label": "Partenaire actif ?"}
+    )
+
+    name = db.Column(
+        db.String(255),
+        info={"label": "Nom"}
+    )
+    
 
 class IndexContent(db.Model):
     

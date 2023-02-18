@@ -18,8 +18,8 @@
             <div class="slide">
             {% endif %}
                 <div class="slide-text-container">
-                    <div class="slide-text slide-project">Projet</div>
-                    <div class="slide-text slide-title">{{ projet.name}}</div>
+                    <div class="slide-text slide-project">PROJET</div>
+                    <div class="slide-text slide-title">{{ projet.name | upper }}</div>
                     <div class="slide-text slide-subtitle">{{ projet.courte_description}}</div>
                     <a class="slide-button" href="{{ url_for('frontend.projet', slug=projet.slug) }}">En savoir plus</a>
                 </div>
@@ -67,18 +67,20 @@
     </div>
     <section class="don main-section">
         <div class="container don-container" id="don">
-            <div class="don-text">
-                <h2>FAITES UN <span class="orange">DON</span></h2>
-                {{ content.don | bbcode | safe}}
-            </div>
-            <div class="don-button">
-                <a href="#">Faire un don</a>
+            <h2>FAÎTES UN <span class="orange">DON</span></h2>
+            <div class="don-flex-container">
+                <div class="don-text">
+                    {{ content.don | bbcode | safe}}
+                </div>
+                <div class="don-button">
+                    <a href="#">FAIRE UN DON</a>
+                </div>
             </div>
         </div>
     </section>
     <div class="container">
         <section class="projets main-section" id="projets">
-            <h2>Nos projets</h2>
+            <h2>NOS PROJETS</h2>
             <div class="projets-subtitle">
                 Découvrez nos projets en cours ou terminés.
             </div>
@@ -88,18 +90,16 @@
                     <div class="projets-tile-img">
                         <img src="{{ url_for('static', filename='img/projets/' + projet.slug + '/' + projet.slug + '_thumbnail.jpg') }}" alt="Image projet.slug">
                     </div>
-                    <div class="projets-tile-title">{{projet.name}}</div>
+                    <div class="projets-description">{{ projet.courte_description }}</div>
+                    <div class="projets-location"><i class="fas fa-map-marker-alt"></i> {{ projet.location }}</div>
                 </a>
                 {% endfor %}
-            </div>
-            <div class="push-right">
-                <a href="/projets" class="orange projets-link">Découvrir tous nos projets <i class="fa fa-arrow-right"></i></a>
             </div>
         </section>
     </div>
     <section class="chiffres main-section">
         <div class="container">
-            <h2>PC Coup d'Pouce en quelques chiffres</h2>
+            <h2>PC COUP D'POUCE EN QUELQUES CHIFFRES</h2>
             <div class="chiffres-subtitle">Pour vous donner une petite idée de ce que nous faisons à PC Coup d'Pouce , découvrez notre association en chiffres.</div>
             <div class="chiffres-data-container">
                 <div class="chiffres-data">
@@ -149,7 +149,7 @@
             </div>
         </div>
     </section>
-    <div class="container">
+    <!--div class="container">
         <section class="news main-section" id="news">
             <h2>Les dernières news</h2>
             <div class="news-subtitle">Retrouvez les dernières news sur les projet pccp</div>
@@ -226,14 +226,11 @@
                 <a href="#">Plus ancien</a>
             </div>
         </section>
-    </div>
-    <section class="partenaires main-section" id="partenaires">
+    </div-->
+    <!--section class="partenaires main-section" id="partenaires">
         <div class="container">
-            <h2>Nos partenaires</h2>
+            <h2>NOS PARTENAIRES</h2>
             <div class="partenaires-subtitle">Sans eux, les équipes de PC Coup d'Pouce  ne pourraient pas mener à bien leurs projets !</div>
-            <div class="partenaires-subsub-container">
-                <span class="partenaires-subsub">Les partenaires de PCCP</span>
-            </div>
             <div class="partenaires-container">
                 <div class="partenaires-item">
                     <div class="partenaires-img">
@@ -249,6 +246,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section-->
 </main>
 {% endblock %}

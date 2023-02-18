@@ -13,20 +13,21 @@
             <nav>
                 <ul class="nav" id="nav">
                     <li class="logo"><img src="{{ url_for('static', filename='img/logo_pccp_linear.jpg') }}" alt="Logo PCCP"></li>
-                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#">Accueil</a></li>
-                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#about">À propos</a></li>
-                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#projets">Nos projets</a></li>
-                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#news">Les news</a></li>
-                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#partenaires">Nos partenaires</a></li>
-                    <li class="nav-item"><a href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-button" href="/">Faîtes un don</a></li>
+                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#">ACCUEIL</a></li>
+                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#about">À PROPOS</a></li>
+                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#projets">NOS PROJETS</a></li>
+                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#news">LES NEWS</a></li>
+                    <li class="nav-item"><a href="{{ url_for('frontend.home') }}#partenaires">NOS PARTENAIRES</a></li>
+                    <li class="nav-item"><a href="#">CONTACT</a></li>
+                    <li class="nav-item"><a class="nav-button" href="/">FAÎTES UN DON</a></li>
                     <li class="icon"><i class="fa fa-bars" id="toggle"></i></li>
                 </ul>
             </nav>
         </header>
         {% block content %}{% endblock %}
         <footer class="footer">
-            ©2021 PC Coup d'Pouce
+            ©2022 association PC Coup d'Pouce<br/>
+            10 rue Vauquelin, 75005 Paris
         </footer>
     </body>
     <script type="text/javascript" src="{{ url_for('static', filename='js/base.js') }}"></script>

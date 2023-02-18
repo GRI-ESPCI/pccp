@@ -30,7 +30,7 @@ def _text_formatting(name, value, options, parent, context):
     return f"<{name} class=\"{classes}\" style=\"{style}\">{value}</{name}>"
 
 def parse_bbcode(data):
-    parser = bbcode.Parser()
+    parser = bbcode.Parser(newline="")
     parser.add_formatter('h1', _text_formatting)
     parser.add_formatter('h2', _text_formatting)
     parser.add_formatter('h3', _text_formatting)

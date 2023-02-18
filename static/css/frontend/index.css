@@ -55,7 +55,6 @@
 }
 .carousel .slide-project {
     font-size: 2.5em;
-    margin-bottom: 0.6em;
 }
 .carousel .slide-title {
     font-size: 3em;
@@ -64,7 +63,6 @@
 .carousel .slide-project {
     margin-top: 0.3em;
     font-size: 2.5em;
-    font-weight: bold;
 }
 .carousel .slide-button {
     color: white;
@@ -167,9 +165,6 @@
     padding: 50px 0px;
 }
 .don-container {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: justify;
     padding-bottom: 15px;
 }
 .don-text {
@@ -177,7 +172,12 @@
     font-size: 1em;
     font-weight: bold;
 }
-.don-text h2 {
+.don-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: justify;
+}
+.don-container h2 {
     font-family: "Roboto";
     margin-left: 10px;
     font-size: 2.5em;
@@ -218,7 +218,7 @@
 .projets .projets-subtitle {
     text-align: center;
     font-family: "RobotoSlab";
-    font-size : 2.5em;
+    font-size : 1.5em;
 }
 .projets-tiles-container {
     width: 100%;
@@ -228,37 +228,33 @@
     justify-content: space-between;
 }
 .projets-tile {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 300px;
     overflow: hidden;
     margin: 10px 0;
     position: relative;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    background-color: #f5f5f5;
 }
 .projets-tile-img img {
-    width: 100%;
-    height: auto;
-}
-.projets-tile-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    display: block;
+    margin: 0 auto;
     height: 300px;
+    width: 80%;
+    object-fit: contain;
 }
-.projets-tile-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.projets-location {
     font-family: "RobotoSlab";
-    font-size: 3em;
-    color: white;
-    text-shadow: 1px 1px black;
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) );
+    color: #fa5002;
+    font-size: 1.5em;
+    margin: 0 auto;
+}
+.projets-description {
+    font-family: "RobotoSlab";
+    color: black;
+    margin: 0 auto;
 }
 .projets-link {
     padding: 30px;
@@ -288,7 +284,7 @@
 }
 .chiffres-subtitle {
     color: white;
-    font-size: 1.7em;
+    font-size: 1.3em;
     text-align: center;
     font-family: "Roboto";
     margin-bottom: 20px;
@@ -298,6 +294,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-start;
 }
 .chiffres-data {
     width: calc(50% - 20px);
@@ -310,6 +307,7 @@
 }
 .chiffres-logo {
     font-size: 2.5em;
+    color: #fa5002;
 }
 .chiffres-number {
     font-family: "Roboto";

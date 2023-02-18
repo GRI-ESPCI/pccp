@@ -16,7 +16,7 @@ admin = Blueprint('admin', __name__)
 @admin.route('/admin/dashboard')
 @login_required
 def dashboard():
-    projets_actifs = Projet.query.order_by(db.desc(Projet.promo)).limit(4).all()
+    projets_actifs = Projet.query.order_by(db.desc(Projet.promo)).all()
     return render_template(
         "admin/dashboard.html",
         projets_actifs=projets_actifs
