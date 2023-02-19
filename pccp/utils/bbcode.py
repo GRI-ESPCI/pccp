@@ -14,7 +14,7 @@ def _render_map(name, value, options, parent, context):
         bbox = options['bbox']
         marker = options['marker']
         marker_data = marker.split('%2C')
-        return f'<div class="projet-center"><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox={bbox}&amp;layer=mapnik&amp;marker={marker}" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat={marker_data[0]}&amp;mlon={marker_data[1]}#map=16/47.6586/2.3446">Afficher une carte plus grande</a></small></div>'
+        return f'<div class="projet-center"><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox={bbox}&amp;layer=mapnik&amp;marker={marker}" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat={marker_data[0]}&amp;mlon={marker_data[1]}#map=8/{marker_data[0]}/{marker_data[1]}">Afficher une carte plus grande</a></small></div>'
 
     return value
 
